@@ -6,6 +6,7 @@ const path    = require('path');
 const express = require('express');
 const webhook = require('./routes/webhook');
 const api     = require('./routes/api');
+const { startAutoRefresh } = require('./services/tokenManager');
 
 const app  = express();
 const PORT = process.env.PORT || 5001;
@@ -21,4 +22,5 @@ app.listen(PORT, () => {
   console.log(`[Debug] ANTHROPIC_API_KEY: ${process.env.ANTHROPIC_API_KEY ? 'FOUND' : 'NOT FOUND'}`);
   console.log(`[Debug] FB_PAGE_ID: ${process.env.FB_PAGE_ID ? 'FOUND' : 'NOT FOUND'}`);
   console.log(`[Debug] UNSPLASH_ACCESS_KEY: ${process.env.UNSPLASH_ACCESS_KEY ? 'FOUND' : 'NOT FOUND'}`);
+  startAutoRefresh();
 });

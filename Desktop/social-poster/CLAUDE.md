@@ -63,10 +63,21 @@ FB_PAGE_ACCESS_TOKEN=...
 
 ---
 
+## Deployment
+- **Live URL:** https://social-poster-wr3p.onrender.com
+- **GitHub:** https://github.com/dantelarge/social-poster
+- **Platform:** Render (free tier — spins down after inactivity)
+- **Root Directory on Render:** `Desktop/social-poster` (git repo was initialized at Desktop level)
+- **Build Command:** `npm install` | **Start Command:** `node server.js` | **Port:** `10000`
+- All env vars must be added in Render → Environment
+
+---
+
 ## Known Issues / Notes
 - FB_PAGE_ACCESS_TOKEN from Graph API Explorer is short-lived (~1 hour) — needs to be converted to a long-lived token
 - Unsplash account must have confirmed email before API access works
 - WhatsApp keys are only needed for the WhatsApp trigger — not required for web dashboard
+- Git repo was initialized at Desktop level — files tracked as `Desktop/social-poster/...`
 
 ---
 
