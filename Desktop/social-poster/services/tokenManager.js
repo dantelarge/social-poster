@@ -60,7 +60,8 @@ async function refreshPageToken() {
 
 // Refresh on startup, then every 45 days
 function startAutoRefresh() {
-  refreshPageToken();
+  // Delay first refresh by 10 seconds to let server fully start
+  setTimeout(refreshPageToken, 10000);
   setInterval(refreshPageToken, 45 * 24 * 60 * 60 * 1000);
 }
 
